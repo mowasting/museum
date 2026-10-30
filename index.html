@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>the museum</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <!-- شاشة الدخول -->
+    <div id="login" class="overlay">
+      <div class="card">
+        <h1>🏛️ the museum </h1>
+        <p class="sub"> put a picture, leave a memory </p>
+
+        <div class="tabs">
+          <button id="tab-guest" class="active">Guest</button>
+          <button id="tab-account">Account</button>
+        </div>
+
+        <label>Your Name
+          <input id="name" maxlength="16" placeholder="e.g., mohamed" />
+        </label>
+
+        <div id="creator"></div>
+
+        <div id="account-fields" hidden>
+          <label>Email
+            <input id="email" type="email" dir="ltr" autocomplete="email" />
+          </label>
+          <label>Password
+            <input id="password" type="password" dir="ltr" autocomplete="current-password" />
+          </label>
+        </div>
+
+        <p id="msg" class="msg"></p>
+
+        <div class="row">
+          <button id="btn-guest" class="primary">Enter as Guest</button>
+          <button id="btn-login" class="primary" hidden>Login</button>
+          <button id="btn-signup" hidden>Create Account</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- واجهة داخل المتحف -->
+    <div id="hud" hidden>
+      <div class="pill" id="status">...</div>
+      <button class="pill" id="btn-customize">🎨 Character</button>
+      <button class="pill" id="btn-logout">خروج</button>
+    </div>
+    <div id="hint" hidden>WASD أو الأسهم للمشي · اسحب بالماوس لتدوير الكاميرا · Shift للركض</div>
+        <button id="btn-door" class="door-btn" hidden>🚪 فتح الباب</button>
+    <div id="joystick" hidden><div id="stick"></div></div>
+
+        <button id="btn-frame" class="door-btn" hidden>🖼️ Frame</button>
+    <button id="btn-sit" class="door-btn" hidden>🪑 Sit</button>
+    <div id="toast" class="toast" hidden></div>
+
+    <!-- Frame options window -->
+    <div id="frame-modal" class="overlay" hidden>
+      <div class="card">
+        <h1 id="fm-title">Frame</h1>
+        <p id="fm-info" class="fm-info"></p>
+        <div class="row">
+          <button id="fm-photo" class="primary">📷 Import photo</button>
+          <button id="fm-video" class="primary">🎬 Import video</button>
+        </div>
+        <div id="fm-name-wrap">
+          <label>Name on the frame
+            <input id="fm-name" maxlength="24" placeholder="Write your name" />
+          </label>
+          <div class="row">
+            <button id="fm-name-save" hidden>✍️ Save name</button>
+          </div>
+        </div>
+        <input id="fm-file" type="file" hidden />
+        <p id="fm-msg" class="msg"></p>
+        <div class="row">
+          <button id="fm-remove" hidden>🗑️ Remove</button>
+          <button id="fm-close">Close</button>
+        </div>
+      </div>
+    </div>
+        <!-- Character customize window -->
+    <div id="custom-modal" class="overlay" hidden>
+      <div class="card">
+        <h1>Customize character</h1>
+        <div id="creator2"></div>
+        <p id="cm-msg" class="msg"></p>
+        <div class="row">
+          <button id="cm-save" class="primary">Save</button>
+          <button id="cm-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
